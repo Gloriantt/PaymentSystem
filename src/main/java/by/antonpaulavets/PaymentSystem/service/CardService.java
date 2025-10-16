@@ -1,7 +1,7 @@
-package by.antonpaulavets.PaymentSystem.service;
+package by.antonpaulavets.paymentsystem.service;
 
-import by.antonpaulavets.PaymentSystem.models.CardInfo;
-import by.antonpaulavets.PaymentSystem.repository.CardInfoRepository;
+import by.antonpaulavets.paymentsystem.models.CardInfo;
+import by.antonpaulavets.paymentsystem.repository.CardInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

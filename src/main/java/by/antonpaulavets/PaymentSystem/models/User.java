@@ -1,9 +1,7 @@
-package by.antonpaulavets.PaymentSystem.models;
+package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,6 +9,8 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -24,4 +24,5 @@ public class User {
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CardInfo> cards;
+
 }
