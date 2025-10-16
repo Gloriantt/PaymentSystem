@@ -4,12 +4,14 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.time.LocalDate;
 import java.util.List;
 @Data
 @Getter
 @Setter
+@ResponseStatus
 public class UserDTO {
 
     private Long id;

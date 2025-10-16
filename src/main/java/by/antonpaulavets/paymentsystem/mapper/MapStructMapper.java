@@ -12,4 +12,5 @@ public interface MapStructMapper {
     User userDtoToUser(UserDTO userDto);
     CardInfoDTO cardInfoToCardInfoDto(CardInfo cardInfo);
     CardInfo cardInfoDtoToCardInfo(CardInfoDTO cardInfoDto);
+
 }
