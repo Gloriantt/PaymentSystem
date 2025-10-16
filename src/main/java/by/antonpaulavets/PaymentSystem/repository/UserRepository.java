@@ -1,7 +1,7 @@
-package by.antonpaulavets.PaymentSystem.repository;
+package by.antonpaulavets.paymentsystem.repository;
 
 
-import by.antonpaulavets.PaymentSystem.models.User;
+import by.antonpaulavets.paymentsystem.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

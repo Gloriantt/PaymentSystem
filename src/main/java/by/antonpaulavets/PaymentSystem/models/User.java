@@ -1,4 +1,4 @@
-package by.antonpaulavets.PaymentSystem.models;
+package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

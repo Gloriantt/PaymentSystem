@@ -1,7 +1,7 @@
-package by.antonpaulavets.PaymentSystem.service;
+package by.antonpaulavets.paymentsystem.service;
 
-import by.antonpaulavets.PaymentSystem.models.User;
-import by.antonpaulavets.PaymentSystem.repository.UserRepository;
+import by.antonpaulavets.paymentsystem.models.User;
+import by.antonpaulavets.paymentsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
