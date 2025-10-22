@@ -17,8 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
-    private final MapStructMapper mapper;
+    private UserService userService;
+    private MapStructMapper mapper;
 
     @PostMapping
     public ResponseEntity<UserResponseDTO> create(@RequestBody UserRequestDTO dto) {

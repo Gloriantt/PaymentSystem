@@ -1,18 +1,19 @@
 package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "card_info")
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class CardInfo {
+@NoArgsConstructor
+@Table(name = "card_info")
+public class CardInfo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,6 +24,7 @@ public class CardInfo {
     private String number;
     private String holder;
     private LocalDate expirationDate;
+
 
     public Long getId() {
         return id;
