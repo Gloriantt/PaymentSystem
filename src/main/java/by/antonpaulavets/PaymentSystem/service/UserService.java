@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    private final MapStructMapper mapper;
+    private MapStructMapper mapper;
 
     public User createUser(User user) {
         return userRepository.save(user);

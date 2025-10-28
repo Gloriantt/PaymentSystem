@@ -1,17 +1,11 @@
 package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "card_info")
-@Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class CardInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +17,17 @@ public class CardInfo {
     private String number;
     private String holder;
     private LocalDate expirationDate;
+
+    public CardInfo() {
+    }
+
+    public CardInfo(Long id, User user, String number, String holder, LocalDate expirationDate) {
+        this.id = id;
+        this.user = user;
+        this.number = number;
+        this.holder = holder;
+        this.expirationDate = expirationDate;
+    }
 
     public Long getId() {
         return id;
