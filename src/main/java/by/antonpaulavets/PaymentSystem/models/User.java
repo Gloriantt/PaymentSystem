@@ -1,4 +1,4 @@
-package by.antonpaulavets.PaymentProject.models;
+package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,6 +22,6 @@ public class User {
     private LocalDate birthDate;
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CardInfo> cards;
 }
