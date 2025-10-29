@@ -51,8 +51,4 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    @CacheEvict(value = "users", allEntries = true)
-    public void clearAllCache() {
-        System.out.println("All user caches cleared");
-    }
 }
