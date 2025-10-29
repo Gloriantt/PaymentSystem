@@ -3,12 +3,10 @@ package by.antonpaulavets.paymentsystem.service;
 import by.antonpaulavets.paymentsystem.models.CardInfo;
 import by.antonpaulavets.paymentsystem.repository.CardInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CardService {
@@ -27,6 +25,13 @@ public class CardService {
         return cardRepo.findAll(PageRequest.of(page, size)).getContent();
     }
 
+    public CardInfo updateCard(Long id, CardInfo newData) {
+        CardInfo existing = getCardById(id);
+        existing.setNumber(newData.getNumber());
+        existing.setHolder(newData.getHolder());
+        existing.setExpirationDate(newData.getExpirationDate());
+        return cardRepo.save(existing);
+    }
     public void deleteCard(Long id) {
         cardRepo.deleteById(id);
     }

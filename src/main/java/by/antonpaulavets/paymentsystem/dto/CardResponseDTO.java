@@ -1,32 +1,24 @@
-package by.antonpaulavets.paymentsystem.models;
-
-import jakarta.persistence.*;
+package by.antonpaulavets.paymentsystem.dto;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "card_info")
-public class CardInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+public class CardResponseDTO {
+    private Long id;
+    private Long userId;
     private String number;
     private String holder;
     private LocalDate expirationDate;
 
-    public CardInfo() {
-    }
-
-    public CardInfo(Long id, User user, String number, String holder, LocalDate expirationDate) {
+    public CardResponseDTO(Long id, Long userId, String number, String holder, LocalDate expirationDate) {
         this.id = id;
-        this.user = user;
+        this.userId = userId;
         this.number = number;
         this.holder = holder;
         this.expirationDate = expirationDate;
+    }
+
+    public CardResponseDTO() {
     }
 
     public Long getId() {
@@ -37,12 +29,12 @@ public class CardInfo {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getNumber() {

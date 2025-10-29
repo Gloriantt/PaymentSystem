@@ -1,48 +1,40 @@
-package by.antonpaulavets.paymentsystem.models;
+package by.antonpaulavets.paymentsystem.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "card_info")
-public class CardInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+public class CardRequestDTO {
+    @NotNull
+    private Long userId;
+    @NotBlank
+    @Size(min = 12,max=19)
     private String number;
+    @NotBlank
     private String holder;
+    @Future
     private LocalDate expirationDate;
 
-    public CardInfo() {
-    }
-
-    public CardInfo(Long id, User user, String number, String holder, LocalDate expirationDate) {
-        this.id = id;
-        this.user = user;
+    public CardRequestDTO(@NotNull Long userId, String number, String holder, LocalDate expirationDate) {
+        this.userId = userId;
         this.number = number;
         this.holder = holder;
         this.expirationDate = expirationDate;
     }
 
-    public Long getId() {
-        return id;
+    public CardRequestDTO() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getNumber() {

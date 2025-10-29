@@ -1,43 +1,30 @@
-package by.antonpaulavets.paymentsystem.models;
+package by.antonpaulavets.paymentsystem.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
 
 import java.time.LocalDate;
-import java.util.List;
 
-@Entity
-@Table(name = "users")
-
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class UserRequestDTO {
+    @NotBlank
     private String name;
+    @NotBlank
     private String surname;
+    @Past
     private LocalDate birthDate;
+    @NotBlank
+    @Email
     private String email;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CardInfo> cards;
-
-    public User() {
-    }
-
-    public User(Long id, String name, String surname, LocalDate birthDate, String email, List<CardInfo> cards) {
-        this.id = id;
+    public UserRequestDTO(String name, String surname, LocalDate birthDate, String email) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
         this.email = email;
-        this.cards = cards;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public UserRequestDTO() {
     }
 
     public String getName() {
@@ -70,13 +57,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<CardInfo> getCards() {
-        return cards;
-    }
-
-    public void setCards(List<CardInfo> cards) {
-        this.cards = cards;
     }
 }

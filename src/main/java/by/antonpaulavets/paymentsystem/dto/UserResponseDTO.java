@@ -1,29 +1,22 @@
-package by.antonpaulavets.paymentsystem.models;
-
-import jakarta.persistence.*;
+package by.antonpaulavets.paymentsystem.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "users")
 
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserResponseDTO {
+
     private Long id;
     private String name;
     private String surname;
     private LocalDate birthDate;
     private String email;
+    private List<CardResponseDTO> cards;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CardInfo> cards;
-
-    public User() {
+    public UserResponseDTO() {
     }
 
-    public User(Long id, String name, String surname, LocalDate birthDate, String email, List<CardInfo> cards) {
+    public UserResponseDTO(Long id, String name, String surname, LocalDate birthDate, String email, List<CardResponseDTO> cards) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -72,11 +65,11 @@ public class User {
         this.email = email;
     }
 
-    public List<CardInfo> getCards() {
+    public List<CardResponseDTO> getCards() {
         return cards;
     }
 
-    public void setCards(List<CardInfo> cards) {
+    public void setCards(List<CardResponseDTO> cards) {
         this.cards = cards;
     }
 }
