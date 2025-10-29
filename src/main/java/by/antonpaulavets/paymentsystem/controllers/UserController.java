@@ -5,7 +5,6 @@ import by.antonpaulavets.paymentsystem.dto.UserResponseDTO;
 import by.antonpaulavets.paymentsystem.mapper.MapStructMapper;
 import by.antonpaulavets.paymentsystem.models.User;
 import by.antonpaulavets.paymentsystem.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
 public class UserController {
 
     private UserService userService;
