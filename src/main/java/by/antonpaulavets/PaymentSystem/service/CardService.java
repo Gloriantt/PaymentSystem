@@ -1,6 +1,5 @@
 package by.antonpaulavets.paymentsystem.service;
 
-
 import by.antonpaulavets.paymentsystem.models.CardInfo;
 import by.antonpaulavets.paymentsystem.repository.CardInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
