@@ -6,7 +6,6 @@ import by.antonpaulavets.paymentsystem.mapper.MapStructMapper;
 import by.antonpaulavets.paymentsystem.models.User;
 import by.antonpaulavets.paymentsystem.repository.UserRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -16,7 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
     @Autowired
     private UserRepository userRepository;

@@ -7,13 +7,11 @@ import by.antonpaulavets.paymentsystem.models.CardInfo;
 import by.antonpaulavets.paymentsystem.models.User;
 import by.antonpaulavets.paymentsystem.service.CardService;
 import by.antonpaulavets.paymentsystem.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/cards")
 public class CardController {
     private CardService cardService;

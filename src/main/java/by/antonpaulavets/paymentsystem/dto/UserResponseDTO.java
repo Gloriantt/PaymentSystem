@@ -1,11 +1,8 @@
 package by.antonpaulavets.paymentsystem.dto;
 
-import lombok.Data;
-
 import java.time.LocalDate;
 import java.util.List;
 
-@Data
 public class UserResponseDTO {
 
     private Long id;

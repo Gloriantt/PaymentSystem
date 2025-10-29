@@ -1,17 +1,11 @@
 package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "card_info")
 public class CardInfo implements Serializable {
     @Id
