@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/cards")
 public class CardController {
-    private  CardService cardService;
-    private  UserService userService;
-    private  MapStructMapper mapper;
+    private CardService cardService;
+    private UserService userService;
+    private MapStructMapper mapper;
 
     @PostMapping
     public ResponseEntity<CardResponseDTO> create(@RequestBody CardRequestDTO dto) {

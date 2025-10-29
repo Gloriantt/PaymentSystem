@@ -2,11 +2,13 @@ package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "card_info")
-public class CardInfo {
+public class CardInfo implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

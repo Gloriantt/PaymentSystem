@@ -17,16 +17,6 @@ public class UserRequestDTO {
     @Email
     private String email;
 
-    public UserRequestDTO(String name, String surname, LocalDate birthDate, String email) {
-        this.name = name;
-        this.surname = surname;
-        this.birthDate = birthDate;
-        this.email = email;
-    }
-
-    public UserRequestDTO() {
-    }
-
     public String getName() {
         return name;
     }

@@ -3,7 +3,6 @@ package by.antonpaulavets.paymentsystem.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-
 public class UserResponseDTO {
 
     private Long id;

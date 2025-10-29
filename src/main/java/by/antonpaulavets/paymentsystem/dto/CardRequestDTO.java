@@ -19,16 +19,6 @@ public class CardRequestDTO {
     @Future
     private LocalDate expirationDate;
 
-    public CardRequestDTO(@NotNull Long userId, String number, String holder, LocalDate expirationDate) {
-        this.userId = userId;
-        this.number = number;
-        this.holder = holder;
-        this.expirationDate = expirationDate;
-    }
-
-    public CardRequestDTO() {
-    }
-
     public Long getUserId() {
         return userId;
     }

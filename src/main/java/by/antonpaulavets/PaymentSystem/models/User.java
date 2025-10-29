@@ -2,26 +2,33 @@ package by.antonpaulavets.paymentsystem.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
-
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="name")
     private String name;
+    @Column(name="surname")
     private String surname;
+    @Column(name="birthDate")
     private LocalDate birthDate;
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "cards")
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CardInfo> cards;
 
+
     public User() {
     }
+
 
     public User(Long id, String name, String surname, LocalDate birthDate, String email, List<CardInfo> cards) {
         this.id = id;

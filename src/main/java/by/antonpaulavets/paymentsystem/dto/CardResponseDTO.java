@@ -10,15 +10,15 @@ public class CardResponseDTO {
     private String holder;
     private LocalDate expirationDate;
 
+    public CardResponseDTO() {
+    }
+
     public CardResponseDTO(Long id, Long userId, String number, String holder, LocalDate expirationDate) {
         this.id = id;
         this.userId = userId;
         this.number = number;
         this.holder = holder;
         this.expirationDate = expirationDate;
-    }
-
-    public CardResponseDTO() {
     }
 
     public Long getId() {
